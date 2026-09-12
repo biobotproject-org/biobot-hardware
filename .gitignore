@@ -1,0 +1,10 @@
+# Altium and KiCad working files
+*.lck
+~*
+*-backups/
+History/
+Project Outputs*/
+__Previews/
+*.PrjPcbStructure~
+.DS_Store
+Thumbs.db
