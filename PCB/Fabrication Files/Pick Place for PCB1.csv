@@ -1,0 +1,46 @@
+Altium Designer Pick and Place Locations
+D:\FIRMWARE\114. Project\Fire Detection Device\Project Outputs for Fire Detection Device\Pick Place for PCB1.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       15/06/26
+Time:       15:24
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description"
+"CN2","9774025151R","TopLayer","SMD-1_BD5.1-D3.5","1632.190","1384.328","0",""
+"CN1","9774025151R","TopLayer","SMD-1_BD5.1-D3.5","1869.198","1388.068","0",""
+"P6","B6B-XH-A(LF)(SN)","TopLayer","CONN-TH_6P-P2.50_B6B-XH-A-LF-SN","2606.299","1438.964","90",""
+"U5","TPS563201DDCR","TopLayer","SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR","2269.430","985.383","270","Function:Step-down type Voltage - Supply:4.5V~17V Voltage - Supply:4.5V~17V Output Voltage:768mV~7V Output Voltage:768mV~7V Output Current:3A Frequency - Switching:580kHz Frequency - Switching:580kHz Operating Temperature:-40?~+125?@(TJ) Operating Tempera"
+"R9","10K","TopLayer","Resistor__(0603)","2322.654","1190.945","270","Semiconductor Resistor"
+"R8","54.9K","TopLayer","Resistor__(0603)","2235.433","1221.441","180","Semiconductor Resistor"
+"R7","10K","TopLayer","Resistor__(0603)","2237.795","1099.898","0","Semiconductor Resistor"
+"R6","22R","BottomLayer","Resistor__(0402)","1096.129","1599.139","90","Semiconductor Resistor"
+"R5","10K","BottomLayer","Resistor__(0402)","949.533","1291.215","0","Semiconductor Resistor"
+"R4","22R","BottomLayer","Resistor__(0402)","1034.719","1392.057","180","Semiconductor Resistor"
+"R3","22R","BottomLayer","Resistor__(0402)","851.107","1391.820","0","Semiconductor Resistor"
+"R2","10K","TopLayer","Resistor__(0603)","2389.764","1304.163","180","Semiconductor Resistor"
+"R1","10K","TopLayer","Resistor__(0603)","2389.764","1365.142","180","Semiconductor Resistor"
+"L1","3.3uF","TopLayer","IND-SMD_L7.3-W6.6","2186.171","490.945","0","Inductor"
+"J2","SF72S006VBDR2500","BottomLayer","NANO-SIM-SMD_SMN-315-ARP7","835.198","1755.852","180","Card Connection Mode:Push-Push Card Type:Nano-SIM Card Connector Type:Connector and Ejector Height Above Board:1.25mm Rated Voltage (Max):10V Operating Temperature:-25?~+85? Operating Temperature:-25?~+85?"
+"J1","MDT420E01001","TopLayer","CONN-SMD_67P-P0.50_TE_2199119-6","264.911","1388.139","90","Pitch:0.5mm Number of Pins:67P Mounting Type:Surface Mount, Right Angle Contact Material:Copper Alloy Contact Plating:Gold Operating Temperature:-40?~+80? Operating Temperature:-40?~+80?"
+"D2","SS54(SMB)","TopLayer","FP_SS54(SMB)","1866.142","185.039","270","Schottky Diode"
+"D1","PESD5V0L5UV,115","BottomLayer","SOT-666-6_L1.6-W1.2-P0.50-LS1.6-TL","948.819","1370.079","90","Polarity:Unidirectional Reverse Stand-Off Voltage (Vrwm):5V Clamping Voltage:12V Peak Pulse Current (Ipp):2.5A Peak Pulse Power Dissipation (Ppp):25W Voltage - Breakdown:6.4V Reverse Leakage Current (Ir):5nA Number of Channels:5 Operating Temperature:-65?"
+"C11","DNP","TopLayer","Ceramic_capacitor_(0603)","2237.795","1160.475","180","Capacitor"
+"C10","22uF","TopLayer","Ceramic_capacitor_(0805)","2016.535","691.732","90","Capacitor"
+"C9","22uF","TopLayer","Ceramic_capacitor_(0805)","2087.683","692.126","90","Capacitor"
+"C8","0.1uF","TopLayer","Ceramic_capacitor_(0805)","2295.669","809.055","180","Capacitor"
+"C7","10uF","TopLayer","Ceramic_capacitor_(0805)","2295.669","737.008","180","Capacitor"
+"C6","10uF","TopLayer","Ceramic_capacitor_(0805)","2295.669","664.961","180","Capacitor"
+"C5","0.1uF","TopLayer","Ceramic_capacitor_(0603)","2159.449","1008.268","90","Capacitor"
+"C4","33pF","BottomLayer","Ceramic_capacitor_(0402)","1096.502","1682.429","90","Capacitor"
+"C3","33pF","BottomLayer","Ceramic_capacitor_(0402)","1027.559","1439.248","0","Capacitor"
+"C2","33pF","BottomLayer","Ceramic_capacitor_(0402)","889.764","1439.248","0","Capacitor"
+"C1","100nF","BottomLayer","Ceramic_capacitor_(0402)","791.339","1439.248","0","Capacitor"
+"P7","KF127-5.08-2P","TopLayer","CONN-TH_P5.08_KF127-5.08-2P","2181.102","169.291","0","Header, 2-Pin"
+"P5","B7B-XH-A(LF)(SN)","TopLayer","CONN-TH_7P-P2.50_B7B-XH-A-LF-SN","2606.299","657.456","90",""
+"P4","KH-2.54FH-1X15P-H8.5","TopLayer","HDR-TH_15P-P2.54-V-F","858.661","688.188","180","Header, 15-Pin"
+"P3","KH-2.54FH-1X15P-H8.5","TopLayer","HDR-TH_15P-P2.54-V-F","858.661","88.189","0","Header, 15-Pin"
