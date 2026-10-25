@@ -1,6 +1,6 @@
-# biobot-hardware
+# Wildfire Alarm hardware (biobot-hardware)
 
-Hardware for the BioBot wildfire sensor node: an open, low-cost module
+Hardware for the Wildfire Alarm sensor node: an open, low-cost module
 placed at the forest edge to catch early signs of smoke. This repository
 holds the carrier PCB design, fabrication outputs, and photos of the
 assembled board. Firmware lives in
