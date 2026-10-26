@@ -59,6 +59,15 @@ On the nose disc's outer face: four holes for the BME688 Qwiic board
 The top disc has a 26 mm finger hole for pulling the sled out and a
 10 mm pass-through for the solar lead.
 
+## Printing
+
+The script writes three STL files next to itself when it finishes
+(`sled_plate.stl`, `sled_nose_disc.stl`, `sled_top_disc.stl`); set
+`EXPORT_STL = False` to skip that. Open each in your slicer (Bambu
+Studio, PrusaSlicer, OrcaSlicer or Cura), lay it on its flat face with
+"place on face", slice, and send to the printer. The plate goes rails
+up, the discs go block up. No supports are needed.
+
 ## Materials
 
 PETG or ASA, not PLA, which softens in a sun-baked pipe. Four walls and

@@ -28,6 +28,7 @@
 # plate into the block (self-tapping, or a heat-set insert in a 4.0 mm hole).
 
 import math
+import os
 import traceback
 
 import adsk.core
@@ -97,6 +98,11 @@ JOINT_SCREW_Y = (-45.0, -19.0)     # joint screws across the plate
 JOINT_CLEAR_D = 3.4      # M3 clearance through the plate
 JOINT_PILOT_D = 2.6      # M3 self-tapping pilot in the block (4.0 for a heat-set insert)
 PRINT_BED = 256.0        # longest side of your printer's bed
+
+# STL export. After building, each printable body is written as a separate
+# STL next to this script (or to EXPORT_DIR if set), ready for the slicer.
+EXPORT_STL = True
+EXPORT_DIR = ''          # '' = the folder this script lives in
 CABLE_D = 10.0           # solar lead pass-through in the top bulkhead
 
 # Derived layout along Z
@@ -388,6 +394,30 @@ def build_tube(root):
 
 
 # ---------------------------------------------------------------------------
+# STL export: one file per printable body, high refinement, binary STL.
+# The slicer then lays each one flat: plate with rails up, discs with the
+# block up.
+# ---------------------------------------------------------------------------
+def export_stls(design, sled_comp):
+    out_dir = EXPORT_DIR or os.path.dirname(os.path.abspath(__file__))
+    os.makedirs(out_dir, exist_ok=True)
+    exporter = design.exportManager
+    written = []
+    for body_name, file_name in (('plate', 'sled_plate.stl'),
+                                 ('nose bulkhead', 'sled_nose_disc.stl'),
+                                 ('top bulkhead', 'sled_top_disc.stl')):
+        body = sled_comp.bRepBodies.itemByName(body_name)
+        if body is None:
+            continue
+        path = os.path.join(out_dir, file_name)
+        opts = exporter.createSTLExportOptions(body, path)
+        opts.meshRefinement = adsk.fusion.MeshRefinementSettings.MeshRefinementHigh
+        opts.isBinaryFormat = True
+        exporter.execute(opts)
+        written.append(path)
+    return written
+
+
 def run(context):
     ui = None
     try:
@@ -399,9 +429,10 @@ def run(context):
             return
         root = design.rootComponent
 
-        build_sled(root)
+        sled = build_sled(root)
         if TUBE_SHOW:
             build_tube(root)
+        exported = export_stls(design, sled) if EXPORT_STL else []
 
         app.activeViewport.fit()
         chord = 2.0 * math.sqrt(BULK_R ** 2 - PLATE_DROP ** 2)
@@ -413,7 +444,8 @@ def run(context):
             f'Print parts: plate {PLATE_W:.0f} x {PLATE_L - 2 * BULK_T - 2 * FIT:.0f} mm, two discs {2 * BULK_R:.0f} mm'
             + ('' if PLATE_L - 2 * BULK_T - 2 * FIT <= PRINT_BED else f'  (PLATE IS LONGER THAN YOUR {PRINT_BED:.0f} mm BED)')
             + '\n\n'
-            'Holes marked MEASURE in the script are placeholders. '
+            + ('STL files written:\n  ' + '\n  '.join(exported) + '\n\n' if exported else '')
+            + 'Holes marked MEASURE in the script are placeholders. '
             'PCB standoffs take M2.5 screws, Victron standoffs take M3. '
             'Battery: one strap across, one lengthwise.'
         )
